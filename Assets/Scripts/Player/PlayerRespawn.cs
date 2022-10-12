@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class PlayerRespawn : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private PlayerMovement playerMovement;
+    private NewPlayerMovement playerMovement;
     // Start is called before the first frame update
     private Vector2 respawnPoint;
     void Start()
     {
         respawnPoint = transform.position;
         rb = GetComponent<Rigidbody2D>();
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<NewPlayerMovement>();
     }
 
     // Update is called once per frame

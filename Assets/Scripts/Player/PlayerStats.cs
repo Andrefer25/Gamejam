@@ -23,6 +23,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject backgroundArruinado;
     [SerializeField] GameObject backgroundNeutro;
 
+    private SpriteRenderer rendSano;
+    private SpriteRenderer rendArruinado;
+    private SpriteRenderer rendNeutro;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,9 @@ public class PlayerStats : MonoBehaviour
         hasHealth = healthCounter > 0;
         RestartStats();
         playerPoints = 6;
+        rendSano = backgroundSano.GetComponent<SpriteRenderer>();
+        rendArruinado = backgroundArruinado.GetComponent<SpriteRenderer>();
+        rendNeutro = backgroundNeutro.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,21 +45,21 @@ public class PlayerStats : MonoBehaviour
     {
         if(playerPoints < 5)
         {
-            backgroundNeutro.SetActive(false);
-            backgroundArruinado.SetActive(true);
-            backgroundSano.SetActive(false);
+            rendNeutro.sortingOrder = -10;
+            rendArruinado.sortingOrder = -9;
+            rendSano.sortingOrder = -10;
         }
         else if(5 <= playerPoints && playerPoints < 8)
         {
-            backgroundNeutro.SetActive(true);
-            backgroundArruinado.SetActive(false);
-            backgroundSano.SetActive(false);
+            rendNeutro.sortingOrder = -9;
+            rendArruinado.sortingOrder = -10;
+            rendSano.sortingOrder = -10;
         }
         else if(playerPoints > 8)
         {
-            backgroundNeutro.SetActive(false);
-            backgroundArruinado.SetActive(false);
-            backgroundSano.SetActive(true);
+            rendNeutro.sortingOrder = -10;
+            rendArruinado.sortingOrder = -10;
+            rendSano.sortingOrder = -9;
         }
     }
 

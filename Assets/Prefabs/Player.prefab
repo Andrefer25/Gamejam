@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 239103162}
   - component: {fileID: 239103163}
   - component: {fileID: 2007463597498145726}
+  - component: {fileID: 891024829}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 2030764272, guid: f5abac08dc621a943abc0a0050196079, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2d80b7e71859cd4e90cd76138eabab8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,8 +127,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021874905, y: 0.016346931}
-  m_Size: {x: 0.09725094, y: 0.12930584}
+  m_Offset: {x: -0.051714063, y: -0.021210074}
+  m_Size: {x: 0.80145466, y: 1.7560556}
   m_Direction: 0
 --- !u!95 &6452791430024252112
 Animator:
@@ -139,7 +140,7 @@ Animator:
   m_GameObject: {fileID: 6452791430024252118}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a1fcbd7c19e344540adbd07cb5d368d4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9c1041e662cc20d43a36300c5b8d89f1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -161,13 +162,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60321dff74de69645b8ebab1f8ceadd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  jumpForce: 150
+  speed: 6
+  jumpForce: 450
   invincibilityTime: 1
-  coyoteTimeThreshold: 0.15
+  coyoteTimeThreshold: 0.3
   canMove: 0
-  recoilSpeed: {x: 0.02, y: 0}
-  shootRecoilTime: 0.15
+  recoilSpeed: {x: 0.2, y: 0}
+  shootRecoilTime: 0.5
 --- !u!114 &6452791430024252126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,10 +181,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9301bb6d48a891a48a10691e82a11a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 1902303696430246678, guid: c570853237f77b74488b456a5c8f12b8, type: 3}
-  OtherBulletPrefab: {fileID: 1902303696430246678, guid: 1a2e72db5aaf66e40abf53357164711b, type: 3}
-  OtherBulletPrefab1: {fileID: 1902303696430246678, guid: 96c90f82843bfa5498e226cbdad3cd68, type: 3}
-  OtherBulletPrefab2: {fileID: 1902303696430246678, guid: cba3ab086854d50498bd5935bc957f75, type: 3}
+  NoRecBulletPrefab1: {fileID: 2382040345675965994, guid: d80da6e09f7f67043993cefd870ba6c2, type: 3}
+  NoRecBulletPrefab2: {fileID: 8188586068713487356, guid: c9a5aa8a1e029be4fac00dcc4f2196be, type: 3}
+  NoRecBulletPrefab3: {fileID: 2602761029957594457, guid: 24e5ca375e41bd44ba7b9e257b19626d, type: 3}
+  NoRecBulletPrefab4: {fileID: 3442983243672424676, guid: 0110cbce1467d484885da9ae62e10569, type: 3}
+  NoRecBulletPrefab5: {fileID: 8521474040208003378, guid: f725d262a093b504d9ebbb36bc1878f8, type: 3}
+  RecBulletPrefab1: {fileID: 5122144355746001716, guid: d85b8543835608441b23f638a1fb2759, type: 3}
+  RecBulletPrefab2: {fileID: 6365351643552247573, guid: f62497348f5d0d64ea4889cdba1f7eae, type: 3}
+  RecBulletPrefab3: {fileID: 7366947019512591129, guid: dfa99568bdb5ed649acb1b44667b08ec, type: 3}
+  RecBulletPrefab4: {fileID: 82680172247522687, guid: 75bc3b16815ac7f4293432930d978b52, type: 3}
+  RecBulletPrefab5: {fileID: 8213774481924070145, guid: 7acc28a5c52dad145a2f1a5ed4c85011, type: 3}
 --- !u!114 &239103162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b35d3a04c103f4ca8c0cbe21069208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRecoilSpeed: {x: 0.2, y: 2}
+  damageRecoilSpeed: {x: 0.05, y: 5}
 --- !u!114 &239103163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,10 +216,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adcc85c824fc9f4593b92c0299cfd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  ammoA: 10
+  ammoB: 10
   healthCounter: 10
-  ammoCounterA: 10
-  ammoCounterB: 10
   canTakeDamage: 1
+  hasHealth: 0
+  ammoASlider: {fileID: 0}
+  ammoBSlider: {fileID: 0}
+  playerPoints: 0
+  backgroundSano: {fileID: 0}
+  backgroundArruinado: {fileID: 0}
+  backgroundNeutro: {fileID: 0}
 --- !u!114 &2007463597498145726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,5 +238,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a5f8488d871b484ba9f5b6f041d538e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &891024829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6452791430024252118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7acea5c2c41af8047b33d7c7161bbd07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
