@@ -122,11 +122,11 @@ public class PlayerStats : MonoBehaviour
 
     public bool CanShootA()
     {
-        return ammoCounterA > 0 && animator.GetBool("isShooting");
+        return ammoCounterA > 0;
     }
 
     public bool CanShootB()
     {
-        return ammoCounterB > 0 && animator.GetBool("isShooting");
+        return ammoCounterB > 0;
     }
 }
